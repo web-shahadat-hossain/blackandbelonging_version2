@@ -1,0 +1,43 @@
+@import "../../../../assets/theme/_var.scss";
+
+.share_modal {
+    :global {
+        .modal-header {
+            text-align: center;
+
+            .modal-title {
+                width: 100%;
+            }
+        }
+
+        .modal-body {
+            min-height: 14rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    ul {
+        max-width: 100%;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        padding-bottom: 0.8rem;
+
+        li {
+            flex-shrink: 0;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            button {
+                svg {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+    }
+}

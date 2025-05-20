@@ -1,0 +1,178 @@
+@import "../../../assets/theme/_var.scss";
+
+.mixtape {
+    position: relative;
+    padding: 6rem 0;
+
+    .back_btn {
+        background-color: transparent;
+        padding: 0;
+        height: auto;
+        border: none;
+
+        svg {
+            margin-right: 0.8rem;
+        }
+
+        @media (max-width: 991px) {
+            top: 1.4rem;
+        }
+    }
+
+    .mixtape_left {
+        position: sticky;
+        top: 10rem;
+
+        .category_text {
+            position: absolute;
+            top: 1.4rem;
+            left: 1.4rem;
+            color: $white;
+            background-color: $primary;
+            padding: 0.4rem 0.8rem;
+        }
+
+        .category_text_shimmer {
+            position: absolute;
+            top: 1.4rem;
+            left: 1.4rem;
+        }
+
+        >img {
+            height: 36rem;
+            border-radius: 1rem;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            @media (max-width: 1399px) {
+                height: 30rem;
+            }
+
+            @media (max-width: 1199px) {
+                height: 26rem;
+            }
+        }
+    }
+
+    .mixtape_right {
+        .mixtape_author {
+            display: flex;
+            align-items: center;
+
+            >img {
+                width: 5.4rem;
+                height: 5.4rem;
+                border-radius: 50%;
+                flex-wrap: wrap;
+                background-color: $body;
+                border: 2px solid $primary;
+                object-fit: contain;
+                transition: 200ms ease-in-out;
+                margin-right: 0.8rem;
+
+                &:hover {
+                    border-width: 0.5rem;
+                }
+            }
+
+            h6 {
+                font-size: 1.4rem;
+                color: $lighttext;
+            }
+
+            p {
+                font-size: 1.8rem;
+                color: $white;
+            }
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin: 2rem 0;
+            color: $white;
+            line-height: 1.6;
+
+            @media (max-width: 767px) {
+                font-size: 1.8rem;
+            }
+        }
+
+        .mixtape_details {
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-right: 2rem;
+
+                h4 {
+                    font-size: 1.4rem;
+                    color: $lighttext;
+                    margin-bottom: 0.8rem;
+                }
+
+                >div {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        width: 4.4rem;
+                        height: 4.4rem;
+                        background-color: rgba($black, 0.1);
+                        border: 1px solid rgba($white, 0.1);
+                        padding: 0.8rem;
+                        border-radius: 0.8rem;
+                        margin-right: 0.8rem;
+                        flex-shrink: 0;
+
+                        path {
+                            fill: $white;
+                        }
+                    }
+
+                    p {
+                        display: flex;
+                        font-size: 2.2rem;
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .tabs {
+            margin-top: 4rem;
+
+            .tabs_nav {
+                display: flex;
+                align-items: center;
+
+                a {
+                    width: 50%;
+                    text-align: center;
+                    height: 4.4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.4rem;
+                    color: $lighttext;
+                    background-color: rgba($primary, 0.2);
+
+                    &:not(:last-child) {
+                        margin-right: 0.8rem;
+                    }
+
+                    &.active {
+                        background-color: $primary;
+                    }
+                }
+            }
+
+            .tabs_content {
+                padding: 2rem;
+                margin-top: 2rem;
+                color: $white;
+                border: 1px solid rgba($white, 0.05);
+            }
+        }
+    }
+}

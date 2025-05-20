@@ -1,0 +1,305 @@
+@import "../../../assets/theme/_var.scss";
+
+.user_playbook {
+    width: 100%;
+    padding: 10px 10px 10px 260px;
+
+    @media (max-width : 1200px) {
+        padding: 10px 10px 10px 10px;
+    }
+
+    .user_playbook_sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        border-right: 1px solid rgba($white, 0.1);
+        height: 100dvh;
+        overflow-y: auto;
+        overflow-x: clip;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .logo {
+            color: $white;
+            padding: 0 0 10px;
+            text-align: center;
+
+            img {
+                max-width: 100px;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                &:last-child {
+                    margin-top: auto;
+                }
+
+                .dropdown {
+                    .dropdown-toggle {
+                        width: 100%;
+                        background-color: rgba($white, 0.04) !important;
+                        box-shadow: none !important;
+                        padding: 0 12px;
+                        height: 40px;
+                        border: none !important;
+                        font-size: 16px;
+                        text-align: left;
+                        transition: 300ms ease-in-out;
+
+                        &:hover,
+                        &.show,
+                        &.active {
+                            background-color: $primary !important;
+                        }
+
+                        &::after {
+                            content: unset;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        position: relative !important;
+                        transform: none !important;
+                        background-color: transparent;
+                        border: none;
+                        padding: 4px 4px 4px 20px;
+
+                        &::after {
+                            content: "";
+                            width: 1px;
+                            height: calc(100% - 12px);
+                            position: absolute;
+                            left: 10px;
+                            top: 4px;
+                            background-color: rgba($white, 0.1);
+                        }
+
+                        button {
+                            cursor: pointer;
+                            display: flex;
+                            align-items: start;
+                            width: 100%;
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: rgba($white, 0.8);
+                            padding: 4px 16px;
+                            transition: 300ms ease-in-out;
+                            border-radius: 4px;
+                            background-color: transparent;
+                            border: none;
+
+                            &:hover {
+                                background-color: rgba($white, 0.05);
+                            }
+
+                            &.active {
+                                color: $primary;
+                            }
+
+                            &:not(:last-child) {
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width : 1200px) {
+
+        .toggle{
+            display: none;
+            transition: all 0.5s;
+        }
+
+        .user_playbook_sidebar_expanded{
+                position: fixed;
+                background-color: #1A1A25;
+                top: 0;
+                left: 0;
+                width: 280px;
+                border-right: 1px solid rgba($white, 0.1);
+                height: 100dvh;
+                overflow-y: auto;
+                overflow-x: clip;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+
+                .close-sidebar{
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+
+                    p{
+                        font-size: 20px;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+        
+                .logo {
+                    color: $white;
+                    padding: 0 0 10px;
+                    text-align: center;
+        
+                    img {
+                        max-width: 100px;
+                    }
+        
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+        
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
+        
+                    li {
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+        
+                        &:last-child {
+                            margin-top: auto;
+                        }
+        
+                        .dropdown {
+                            .dropdown-toggle {
+                                width: 100%;
+                                background-color: rgba($white, 0.04) !important;
+                                box-shadow: none !important;
+                                padding: 0 12px;
+                                height: 40px;
+                                border: none !important;
+                                font-size: 16px;
+                                text-align: left;
+                                transition: 300ms ease-in-out;
+        
+                                &:hover,
+                                &.show,
+                                &.active {
+                                    background-color: $primary !important;
+                                }
+        
+                                &::after {
+                                    content: unset;
+                                }
+                            }
+        
+                            .dropdown-menu {
+                                position: relative !important;
+                                transform: none !important;
+                                background-color: transparent;
+                                border: none;
+                                padding: 4px 4px 4px 20px;
+        
+                                &::after {
+                                    content: "";
+                                    width: 1px;
+                                    height: calc(100% - 12px);
+                                    position: absolute;
+                                    left: 10px;
+                                    top: 4px;
+                                    background-color: rgba($white, 0.1);
+                                }
+        
+                                button {
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: start;
+                                    width: 100%;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    color: rgba($white, 0.8);
+                                    padding: 4px 16px;
+                                    transition: 300ms ease-in-out;
+                                    border-radius: 4px;
+                                    background-color: transparent;
+                                    border: none;
+        
+                                    &:hover {
+                                        background-color: rgba($white, 0.05);
+                                    }
+        
+                                    &.active {
+                                        color: $primary;
+                                    }
+        
+                                    &:not(:last-child) {
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            
+        }
+       
+       button{
+        background-color: transparent;
+        border: none;
+       span {
+        width: 3.2rem;
+        height: 0.3rem;
+        background-color: $primary;
+        border-radius: 5rem;
+        display: block;
+        transform-origin: left;
+        transition: 200ms ease-in-out;
+
+        &:not(:last-child) {
+            margin-bottom: 0.8rem;
+        }
+    }
+}
+    }
+
+    .user_play_book_content {
+        .user_play_book_content_header {
+            border-bottom: 1px dashed rgba($white, 0.4);
+            padding: 10px 0 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            h2 {
+                font-size: 2.4rem;
+                color: $white;
+                margin-inline: auto;
+            }
+        }
+
+        .user_playbook_content_steps {
+            color: $white;
+            margin-top: 4rem;
+            // display: flex;
+            // flex-direction: column;
+            // gap: 10px;
+        }
+    }
+
+    .our_tribe {
+        h2 {
+            display: none;
+        }
+    }
+}

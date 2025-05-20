@@ -1,0 +1,47 @@
+@import "../../../../assets/theme/_var.scss";
+
+.playbooks {
+    min-height: 100dvh;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .playbooks_box {
+        background-color: $shimmer;
+        max-width: 50rem;
+        width: 100%;
+        border-radius: 1.8rem;
+        padding: 4rem;
+        margin: auto;
+
+        h2 {
+            font-size: 2rem;
+            color: $white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        ul {
+            li {
+                a {
+                    color: $white;
+                    font-size: 1.6rem;
+                    padding: 1.6rem 2rem;
+                    width: 100%;
+                    transition: 300ms ease-in-out;
+
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+
+                &:not(:last-child) {
+                    a {
+                        border-bottom: 1px solid rgba($white, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}

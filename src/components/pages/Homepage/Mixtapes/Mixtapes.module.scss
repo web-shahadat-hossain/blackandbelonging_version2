@@ -1,0 +1,17 @@
+@import "../../../../assets/theme/_var.scss";
+
+.mixtapes {
+    padding: 4rem 0;
+    background-color: rgba($black, 0.4);
+
+    h2 {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .view_btn {
+        margin: 3rem auto 0;
+        display: flex;
+        max-width: 18rem;
+    }
+}

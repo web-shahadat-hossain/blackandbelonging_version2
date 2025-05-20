@@ -1,0 +1,156 @@
+@import "../../../../../assets/theme/_var.scss";
+
+.play_book_page_sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    border-right: 1px solid rgba($white, 0.1);
+    height: 100dvh;
+    overflow-y: auto;
+    overflow-x: clip;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+        font-size: 24px;
+        font-weight: 600;
+        color: $white;
+        padding: 0 0 10px;
+
+        img {
+            max-width: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        li {
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            a {
+                width: 100%;
+                background-color: rgba($white, 0.04) !important;
+                box-shadow: none !important;
+                padding: 0 12px;
+                height: 40px;
+                border: none !important;
+                font-size: 16px;
+                text-align: left;
+                transition: 300ms ease-in-out;
+                display: flex;
+                align-items: center;
+                color: $white;
+                border-radius: 10px;
+
+                &:hover,
+                &.active {
+                    background-color: $primary !important;
+                }
+
+                &::after {
+                    content: unset;
+                }
+
+            }
+
+            .delete_btn {
+                width: 40px;
+                height: 40px;
+                padding: 8px;
+                border-radius: 8px;
+                color: $white;
+                margin-right: -100%;
+                transition: 300ms ease-in-out;
+                background-color: transparent;
+                border: none;
+                outline: none;
+            }
+
+            &:hover {
+                .delete_btn {
+                    margin-right: 0;
+                }
+            }
+
+            // .dropdown {
+            //     .dropdown-toggle {
+            //         width: 100%;
+            //         background-color: rgba($white, 0.04) !important;
+            //         box-shadow: none !important;
+            //         padding: 0 12px;
+            //         height: 40px;
+            //         border: none !important;
+            //         font-size: 16px;
+            //         text-align: left;
+            //         transition: 300ms ease-in-out;
+
+            //         &:hover,
+            //         &.show {
+            //             background-color: $primary !important;
+            //         }
+
+            //         &::after {
+            //             content: unset;
+            //         }
+            //     }
+
+            //     .dropdown-menu {
+            //         position: relative !important;
+            //         transform: none !important;
+            //         background-color: transparent;
+            //         border: none;
+            //         padding: 4px 4px 4px 20px;
+
+            //         &::after {
+            //             content: "";
+            //             width: 1px;
+            //             height: calc(100% - 12px);
+            //             position: absolute;
+            //             left: 10px;
+            //             top: 4px;
+            //             background-color: rgba($white, 0.1);
+            //         }
+
+            //         a {
+            //             display: block;
+            //             width: 100%;
+            //             font-size: 14px;
+            //             font-weight: 400;
+            //             color: rgba($white, 0.8);
+            //             padding: 4px 16px;
+            //             transition: 300ms ease-in-out;
+            //             border-radius: 4px;
+
+            //             &:hover {
+            //                 background-color: rgba($white, 0.05);
+            //             }
+
+            //             &.active {
+            //                 color: $primary;
+            //             }
+
+            //             &:not(:last-child) {
+            //                 margin-bottom: 10px;
+            //             }
+            //         }
+            //     }
+            // }
+        }
+    }
+}

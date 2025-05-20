@@ -1,0 +1,33 @@
+@import "../../../../assets/theme/_var.scss";
+
+.track {
+    :global {
+        .modal-dialog {
+            max-width: 80rem;
+
+            .modal-content {
+                padding: 4rem;
+                background-color: rgba($black, 0.5);
+
+                @media (max-width: 575px) {
+                    padding: 0;
+                }
+
+                .modal-header {
+                    margin-bottom: 4rem;
+                    align-items: flex-start;
+
+                    @media (max-width: 575px) {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    video {
+        width: 100%;
+        background-color: $black;
+        height: 30rem;
+    }
+}

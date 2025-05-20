@@ -1,0 +1,13 @@
+@import "../../../../assets/theme/_var.scss";
+
+.description {
+    p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: $white;
+
+        @media (max-width: 767px) {
+            font-size: 1.4rem;
+        }
+    }
+}

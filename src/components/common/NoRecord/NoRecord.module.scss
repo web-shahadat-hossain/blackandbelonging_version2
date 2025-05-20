@@ -1,0 +1,28 @@
+@import "../../../assets/theme/_var.scss";
+
+.no_record {
+    text-align: center;
+    padding: 4rem 2rem;
+    border: 1px solid rgba($white, 0.05);
+    background-color: rgba($white, 0.03);
+    border-radius: 0.8rem;
+
+    svg {
+        width: 4.2rem;
+        height: 4.2rem;
+        margin-bottom: 1.4rem;
+
+        path {
+            fill: $lighttext;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        color: $white;
+
+        @media (max-width: 767px) {
+            font-size: 1.4rem;
+        }
+    }
+}

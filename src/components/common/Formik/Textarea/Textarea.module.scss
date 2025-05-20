@@ -1,0 +1,45 @@
+@import "../../../../assets/theme/_var.scss";
+
+.input {
+    label {
+        font-size: 1.6rem;
+        color: $lighttext;
+        margin-bottom: 0.8rem;
+    }
+
+    .input_in {
+        position: relative;
+
+        textarea {
+            min-height: 10rem;
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid rgba($white , 0.1);
+            border-radius: 0.8rem;
+            transition: 300ms ease-in-out;
+            height: 4.4rem;
+            font-size: 1.6rem;
+            color: $text;
+            font-weight: 600;
+            outline: none;
+            padding: 1rem 2rem;
+
+            @media (max-width: 767px) {
+                font-size: 1.4rem;
+            }
+
+            &:hover,
+            &:focus {
+                border-color: $primary;
+
+                +.icon {
+                    svg {
+                        path {
+                            fill: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

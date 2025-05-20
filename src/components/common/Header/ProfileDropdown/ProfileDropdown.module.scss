@@ -1,0 +1,80 @@
+@import "../../../../assets/theme/_var.scss";
+
+.dropdown {
+    .dropdown_btn {
+        border: none;
+        outline: none;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        padding: 0;
+
+        svg {
+            width: 3rem;
+            height: 3rem;
+
+            path {
+                fill: $primary;
+            }
+        }
+
+        &::after {
+            content: unset;
+        }
+    }
+
+    .dropdown_menu {
+        left: unset !important;
+        right: 0 !important;
+        background-color: rgba($black, 0.6);
+        backdrop-filter: blur(0.5rem);
+        border: 1px solid rgba($white, 0.1);
+        padding: 0.8rem;
+        border-radius: 1rem;
+        width: 20rem;
+
+        .profile_details {
+            text-align: center;
+            margin-bottom: 2rem;
+
+            img {
+                width: 6.4rem;
+                height: 6.4rem;
+                border-radius: 50%;
+            }
+
+            h3 {
+                color: $white;
+                font-size: 1.4rem;
+                margin-top: 0.4rem;
+            }
+        }
+
+        ul {
+            hr {
+                margin: 0.4rem 0;
+                border-top-color: rgba($white, 0.4);
+            }
+
+            li {
+                :global {
+                    a {
+                        font-size: 1.4rem;
+                        width: 100%;
+                        background-color: transparent;
+                        color: $lighttext;
+                        padding: 0.8rem 1rem;
+                        border-radius: 0.4rem;
+                        transition: 200ms ease-in-out;
+                        text-transform: capitalize;
+
+                        &:hover,
+                        &.active {
+                            background-color: rgba($primary, 1);
+                            color: $text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+@import "../../../../assets/theme/_var.scss";
+
+.our_tribe {
+    position: relative;
+    overflow-x: clip;
+    padding: 4rem 0;
+
+    .title {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    :global {
+        .slick-slider {
+            margin-bottom: 2rem;
+
+            .slick-arrow {
+                z-index: 1;
+                opacity: 1;
+                width: 4rem;
+                height: 4rem;
+                background-color: $primary;
+                border: 1px solid rgba($primary , 0.5);
+                border-radius: 50%;
+                background-image: url(../../../../assets/icons/left-arrow.svg);
+                background-size: 2rem;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                &::before {
+                    content: unset;
+                }
+
+                &.slick-prev {
+                    left: 1rem;
+                    transform: rotate(180deg) translateY(50%);
+                }
+
+                &.slick-next {
+                    right: 1rem;
+                }
+            }
+
+            .slick-slide {
+                padding-inline: 1rem;
+
+                img {
+                    width: 30rem !important;
+                    height: auto;
+                    margin: auto;
+                    display: block !important;
+
+                    @media (max-width: 499px) {
+                        width: 20rem !important;
+                        // height: 20rem;
+                    }
+
+                    @media (max-width: 419px) {
+                        width: 14rem !important;
+                        // height: 14rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+:global {
+    .gallery_modal {
+        &.show {
+            opacity: 1;
+            background-color: rgba($black, 0.5);
+            backdrop-filter: blur(1rem);
+        }
+    }
+}
+
+.gallery_modal {
+    :global {
+        .modal-dialog {
+            max-width: 120rem;
+            padding: 2rem;
+
+            .modal-content {
+                background-color: transparent;
+                border: none;
+
+                .image-gallery-image {
+                    max-height: 40rem;
+                }
+
+                .image-gallery-icon {
+                    svg {
+                        width: 3rem;
+                    }
+                }
+
+                .image-gallery-thumbnails-wrapper {
+                    margin-top: 4rem;
+                }
+            }
+        }
+    }
+
+    .close_btn {
+        position: fixed;
+        top: 2rem;
+        height: 3rem;
+        width: 3rem;
+        right: 2rem;
+        background-color: black;
+        border: none;
+        outline: none;
+        z-index: 100;
+
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+    }
+}

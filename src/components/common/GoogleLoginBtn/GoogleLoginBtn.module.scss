@@ -1,0 +1,20 @@
+@import "../../../assets/theme/_var.scss";
+
+.google_btn {
+    border: none;
+    padding: 0;
+    width: 100%;
+    background-color: $white !important;
+    height: 5rem;
+    color: $black;
+    font-weight: 700;
+
+    img {
+        width: 3rem;
+        margin-right: 1.2rem;
+    }
+
+    &:hover {
+        background-color: $white !important;
+    }
+}

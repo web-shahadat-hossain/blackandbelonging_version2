@@ -1,0 +1,83 @@
+@import "../../../../../assets/theme/_var.scss";
+
+.box {
+    display: flex;
+    align-items: center;
+
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: 991px) {
+        display: block;
+        padding: 3rem 0;
+    }
+
+    .box_left {
+        width: 50%;
+        position: relative;
+
+        @media (max-width: 991px) {
+            width: 100%;
+            text-align: center;
+        }
+
+        >h4 {
+            font-size: 18rem;
+            color: rgba($white, 0.1);
+            font-weight: 600;
+            position: absolute;
+
+            @media (max-width: 991px) {
+                font-size: 14rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 10rem;
+            }
+
+            @media (max-width: 499px) {
+                font-size: 8rem;
+            }
+        }
+
+        >h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: $text;
+
+            @media (max-width: 1199px) {
+                font-size: 2.4rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 2rem;
+            }
+        }
+
+        >p {
+            margin-top: 1rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: $lighttext;
+
+            @media (max-width: 767px) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    .box_right {
+        text-align: center;
+        width: 50%;
+
+        @media (max-width: 991px) {
+            width: 100%;
+            margin-top: 2rem;
+
+            img {
+                max-width: 25rem;
+            }
+        }
+    }
+}

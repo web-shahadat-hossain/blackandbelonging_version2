@@ -1,0 +1,100 @@
+@import "../../../../assets/theme/_var.scss";
+
+.input {
+    label {
+        font-size: 1.6rem;
+        color: $lighttext;
+        margin-bottom: 0.8rem;
+    }
+
+    .input_in {
+        position: relative;
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 1.6rem;
+
+            svg {
+                width: 2rem;
+                height: auto;
+
+                path {
+                    transition: 300ms ease-in-out;
+                    fill: rgba($white , 0.1);
+                }
+            }
+        }
+
+        input {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid rgba($white , 0.1);
+            border-radius: 0.8rem;
+            transition: 300ms ease-in-out;
+            height: 4.4rem;
+            font-size: 1.6rem;
+            color: $text;
+            font-weight: 600;
+            outline: none;
+            padding: 0 2rem;
+
+            @media (max-width: 767px) {
+                font-size: 1.4rem;
+            }
+
+            &:not(:disabled) {
+
+                &:hover,
+                &:focus {
+                    border-color: $primary;
+
+                    +.icon {
+                        svg {
+                            path {
+                                fill: $primary;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+        }
+
+        &.icon_input {
+            input {
+                padding-left: 5rem;
+            }
+        }
+    }
+
+    &.password {
+        .input_in {
+            input {
+                padding-right: 6rem;
+            }
+
+            button {
+                position: absolute;
+                top: 50%;
+                right: 1.6rem;
+                transform: translateY(-50%);
+
+                svg {
+                    width: 2rem;
+
+                    path {
+                        fill: rgba($white, 0.4);
+                    }
+                }
+            }
+        }
+    }
+    
+}

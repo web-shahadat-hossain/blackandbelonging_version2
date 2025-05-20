@@ -1,0 +1,101 @@
+@import "../../../../assets/theme/_var.scss";
+
+.about {
+    margin-top: -10rem;
+    // padding: 4rem 0;
+
+    h3 {
+        font-size: 1.8rem;
+        color: $lighttext;
+        border-bottom: 2px solid $primary;
+        padding-bottom: 0.8rem;
+        width: fit-content;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        max-width: 80rem;
+    }
+
+    .about_in {
+        background-image: url(../../../../assets/images/about-bg.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
+        min-height: 80vh;
+        padding: 12rem 0 8rem;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        @media (max-width: 767px) {
+            min-height: 70vh;
+        }
+
+        .box {
+            max-width: 50rem;
+            background-color: $white;
+            padding: 4.4rem;
+            border-radius: 4px;
+
+            @media (max-width: 767px) {
+                padding: 3.4rem;
+                text-align: center;
+            }
+
+            >h4 {
+                font-size: 2.4rem;
+
+
+                @media (max-width: 991px) {
+                    font-size: 2rem;
+                }
+
+                @media (max-width: 767px) {
+                    font-size: 1.8rem;
+                }
+
+                @media (max-width: 399px) {
+                    font-size: 1.4rem;
+                }
+            }
+
+            >p {
+                font-size: 1.8rem;
+                margin: 2rem 0;
+
+                @media (max-width: 767px) {
+                    font-size: 1.4rem;
+                }
+            }
+
+            >a {
+                // width: 30rem;
+
+                svg {
+                    width: 1.8rem;
+                    margin-left: 0.8rem;
+                    fill: $white;
+
+                    line,
+                    polyline {
+                        transition: 200ms ease-in-out;
+                        stroke: $white;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        fill: $primary;
+
+                        line,
+                        polyline {
+                            stroke: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

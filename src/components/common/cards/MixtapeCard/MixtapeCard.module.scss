@@ -1,0 +1,66 @@
+@import "../../../../assets/theme/_var.scss";
+
+.card {
+    padding: 2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba($white, 0.05);
+    box-shadow: 0 0 0.5rem 0.5rem rgba($white, 0.03);
+    height: 100%;
+
+    .card_img {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 22rem;
+            border-radius: 0.8rem;
+            object-fit: cover;
+            object-position: top;
+            background-color: rgba($black, 0.1);
+        }
+
+        .category {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            background-color: rgba($primary, 0.8);
+            word-break: break-all;
+            color: $white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.8rem;
+        }
+    }
+
+    .date {
+        font-size: 1.3rem;
+        color: rgba($lighttext, 0.5);
+        font-weight: 400;
+        margin: 0 0 1.6rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        color: $white;
+        font-weight: 600;
+        // margin: 0 0 1.6rem;
+        margin: 2rem 0 1rem;
+        word-break: break-all;
+
+        @media (max-width: 1199px) {
+            font-size: 1.8rem;
+        }
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .type {
+        color: $lighttext;
+        font-size: 1.4rem;
+        font-weight: 500;
+        border-left: 2px solid $primary;
+        padding-left: 0.6rem;
+        line-height: 1.2;
+    }
+}

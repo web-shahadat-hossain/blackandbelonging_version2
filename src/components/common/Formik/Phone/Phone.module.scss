@@ -1,0 +1,102 @@
+@import "../../../../assets/theme/_var.scss";
+
+.input {
+    label {
+        font-size: 1.6rem;
+        color: $lighttext;
+        margin-bottom: 0.8rem;
+    }
+
+    :global {
+        .form-control {
+            width: 100%;
+            font-family: $basefont;
+            background-color: transparent;
+            border: 1px solid rgba($white , 0.1);
+            border-radius: 0.8rem;
+            transition: 300ms ease-in-out;
+            height: 4.4rem;
+            font-size: 1.6rem;
+            color: $text;
+            font-weight: 600;
+            outline: none;
+            padding: 0 2rem 0 6rem;
+            box-shadow: none;
+
+            @media (max-width: 767px) {
+                font-size: 1.4rem;
+            }
+
+            &::placeholder {
+                color: rgba($white, 0.5);
+            }
+
+            &:not(:disabled) {
+
+                &:hover,
+                &:focus {
+                    border-color: $primary;
+
+                    +.icon {
+                        svg {
+                            path {
+                                fill: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:disabled {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+        }
+
+        .flag-dropdown {
+            background: transparent !important;
+            border: none;
+            outline: none;
+            box-shadow: none;
+
+            .selected-flag {
+                background: transparent !important;
+            }
+        }
+
+        .country-list {
+            background-color: $shimmer;
+
+            &::-webkit-scrollbar {
+                width: 0.8rem;
+                height: 0.8rem;
+                background-color: rgba($black, 0.4);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                width: 0.8rem;
+                height: 0.8rem;
+                background-color: rgba($primary, 1);
+            }
+
+            li {
+                &.country {
+                    color: $white;
+
+                    .dial-code {
+                        color: rgba($white, 0.5);
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 0.1rem;
+                    }
+
+                    &:hover,
+                    &.highlight {
+                        background-color: rgba($white, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import "../../../assets/theme/_var.scss";
+
+.contact {
+    padding: 8rem 0;
+
+    .contact_card {
+        text-align: center;
+        padding: 2rem;
+        background-color: rgba($white, 0.05);
+        height: 100%;
+        border-radius: 0.8rem;
+        position: relative;
+        overflow: hidden;
+        transition: 200ms ease-in-out;
+        border: 1px solid transparent;
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        >svg {
+            width: 4rem;
+
+            path {
+                fill: $white;
+            }
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: $text;
+            margin: 2rem 0;
+        }
+
+        p {
+            font-size: 1.4rem;
+            color: rgba($white, 0.4);
+            font-weight: 400;
+        }
+
+        .card_bg_icon {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transition: 800ms ease-in-out;
+            z-index: -1;
+
+            svg {
+                height: 14rem;
+                width: 14rem;
+
+                path {
+                    fill: rgba($white, 0.02);
+                }
+            }
+        }
+
+        &:hover {
+            background-color: rgba($black, 0.05);
+            border-color: rgba($white, 0.04);
+
+            .card_bg_icon {
+                transform: rotate(-15deg);
+            }
+        }
+    }
+}

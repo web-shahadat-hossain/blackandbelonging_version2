@@ -1,0 +1,129 @@
+@import "../../../../assets/theme/_var.scss";
+
+.rsvp {
+    :global {
+        .modal-dialog {
+            max-width: 60rem;
+        }
+    }
+
+    .steps {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            >li {
+                width: calc(100% / 3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                &:not(:first-child) {
+                    &::before {
+                        content: "";
+                        width: calc(100% - 8rem);
+                        height: 0;
+                        border-top: 1px dashed $white;
+                        position: absolute;
+                        top: 50%;
+                        right: calc(50% + 4rem);
+                        transform: translateY(-50%);
+                    }
+                }
+
+                &.active,
+                &.done {
+                    &::before {
+                        border-color: $primary;
+                    }
+                }
+
+                button {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                    background-color: $shimmer;
+                    z-index: 4;
+                    cursor: default;
+                    padding: 1rem;
+
+                    svg {
+                        path {
+                            fill: $white;
+                        }
+                    }
+
+                    &.done {
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background-image: url(../../../../assets/icons/tick.svg);
+                            background-size: 2rem;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-color: $primary;
+                            border-radius: inherit;
+                        }
+                    }
+
+                    &.active {
+                        background-color: rgba($primary, 0.6);
+                    }
+                }
+            }
+        }
+    }
+
+    .steps_content {
+        padding: 2rem;
+
+        :global {
+            .row {
+                margin: -0.8rem;
+
+                >div {
+                    padding: 0.8rem;
+                }
+            }
+        }
+
+        .success {
+            position: relative;
+            padding: 6rem 0;
+            text-align: center;
+
+            h3 {
+                color: $white;
+                margin-bottom: 2rem;
+                font-size: 2.4rem;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 1.6rem;
+                color: rgba($white, 0.6);
+
+                a {
+                    color: $primary;
+                }
+            }
+
+            .animation {
+                position: absolute;
+                bottom: 0;
+                pointer-events: none;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@import "../../../assets/theme/_var.scss";
+
+.btn {
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    color: $text;
+    font-weight: 600;
+    height: 4.4rem;
+    background-color: $primary;
+    border: 2px solid $primary;
+    padding: 0 3.2rem;
+    transition: 300ms ease-in-out;
+    border-radius: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    svg {
+        transition: 200ms ease-in-out;
+        width: 2rem;
+
+        path {
+            transition: 200ms ease-in-out;
+            fill: $text;
+        }
+    }
+
+    :global {
+        .spinner-border {
+            width: 2rem;
+            height: 2rem;
+            border-color: $text;
+            border-width: 0.3rem;
+            border-right-color: transparent;
+        }
+    }
+
+    &:not([data-variant*="bordered_primary"]) {
+        &:hover {
+            background-color: transparent;
+            color: $primary;
+
+            svg {
+                path {
+                    fill: $primary;
+                }
+            }
+        }
+    }
+
+    &:disabled,
+    &[data-disabled="true"] {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    &[data-variant*="bordered_primary"] {
+        background-color: transparent;
+        color: $primary;
+
+        svg {
+            path {
+                fill: $primary;
+            }
+        }
+
+        &:hover {
+            background-color: $primary;
+            color: $text;
+
+            svg {
+                path {
+                    fill: $text;
+                }
+            }
+        }
+    }
+
+    &[data-variant*="bordered_danger"] {
+        border-color: $danger;
+        background-color: transparent;
+        color: $danger;
+
+        &:hover {
+            background-color: $danger;
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,204 @@
+@import "../../../assets/theme/_var.scss";
+
+
+.banner {
+    padding: 35.7rem 0 6rem;
+    text-align: center;
+    background-image: linear-gradient(180deg, rgba($black, 0.8), rgba($black, 0.8)), url(../../../assets/images/latest_poll_banner.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -11.731rem;
+
+    h1 {
+        color: $white;
+        font-size: 4.4rem;
+        font-weight: 700;
+
+        @media (max-width: 1479px) {
+            font-size: 3.4rem;
+        }
+
+        @media (max-width: 1199px) {
+            font-size: 2.8rem;
+        }
+
+        @media (max-width: 991px) {
+            font-size: 2.4rem;
+        }
+
+        // @media (max-width: 767px) {
+        //     font-size: 2rem;
+        //     font-weight: 600;
+        // }
+    }
+
+    p {
+        max-width: 50rem;
+        margin: 2rem auto 4rem;
+        font-size: 1.8rem;
+        color: $lighttext;
+    }
+
+    ul {
+        max-width: 100%;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+        justify-content: center;
+        padding-bottom: 0.8rem;
+
+        li {
+            flex-shrink: 0;
+
+            &:not(:last-child) {
+                margin-right: 2rem;
+            }
+
+            button {
+                svg {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+    }
+}
+
+
+.view_polls {
+    padding: 8rem 0;
+
+    .poll_details {
+        margin-bottom: 2rem;
+
+        ul {
+            display: flex;
+            align-items: center;
+            margin: -1rem;
+
+            li {
+                padding: 1rem;
+
+                .poll_details_box {
+                    display: flex;
+                    align-items: center;
+
+                    svg {
+                        width: 2rem;
+                        height: 2rem;
+                        margin-right: 1rem;
+                        flex-shrink: 0;
+
+                        path {
+                            fill: $white;
+                        }
+                    }
+
+                    p {
+                        color: $white;
+                        font-size: 1.8rem;
+                        text-transform: capitalize;
+                        font-weight: 600;
+                    }
+
+                    &.live {
+                        padding: 0.6rem 1.6rem;
+                        background-color: rgba($green, 0.1);
+                        border-radius: 4rem;
+
+                        svg {
+                            path {
+                                fill: $green;
+                            }
+                        }
+
+                        p {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .poll_card {
+        padding: 2rem;
+        border-radius: 0.8rem;
+        border: 1px solid rgba($white, 0.05);
+        box-shadow: 0 0 0.5rem 0.5rem rgba($white, 0.03);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        h3 {
+            font-size: 2rem;
+            color: $white;
+            font-weight: 600;
+            // margin: 0 0 1.6rem;
+            margin: 2rem 0 1rem;
+            text-align: center;
+
+            @media (max-width: 1199px) {
+                font-size: 1.8rem;
+            }
+        }
+
+        .share_icon {
+            position: absolute;
+            top: 1.6rem;
+            right: 1.6rem;
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            background-color: $primary;
+            // padding: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                scale: 0.68;
+                translate: -0.1rem 0rem;
+
+                g>* {
+                    stroke: $white;
+                }
+            }
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            background-color: rgba($white, 0.1);
+            border-radius: 4rem;
+            margin: 2rem 0;
+            margin-top: auto;
+
+            span {
+                height: 3rem;
+                border-radius: 5rem;
+                background-color: $primary;
+            }
+
+            p {
+                position: absolute;
+                font-size: 1.6rem;
+                color: $white;
+                padding-inline: 2rem;
+            }
+        }
+
+        // button {}
+        .animation {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            width: 100%;
+        }
+    }
+}

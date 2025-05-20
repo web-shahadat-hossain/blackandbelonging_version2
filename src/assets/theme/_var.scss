@@ -1,0 +1,24 @@
+// fonts
+$basefont: "Mont", sans-serif;
+
+// colors
+$shimmer: #29293a;
+$body: #1A1A25;
+$primary: #ff014f;
+$text: #eeddee;
+$lighttext: #bebbbb;
+$white: white;
+$black: black;
+$danger: rgb(255, 21, 68);
+$blue: rgb(80, 80, 255);
+$green: rgb(44, 193, 44);
+
+// gradients
+$shimmer_gradient: linear-gradient(90deg, #29293a 0, #3a3a53 30%, #29293a);
+
+// z indexes
+$header: 100;
+$modal: 1056;
+$loader: 1100;
+$sidebar: 105;
+$sidebar_overlay: 104;

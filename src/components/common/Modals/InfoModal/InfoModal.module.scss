@@ -1,0 +1,18 @@
+@import "../../../../assets/theme/_var.scss";
+
+.otp_modal {
+    p {
+        color: $white;
+        font-size: 15px;
+        display: flex;
+        text-align: center;
+        margin-bottom: 26px;
+    
+        a {
+            color: $primary;
+        }
+    }
+
+  
+
+}

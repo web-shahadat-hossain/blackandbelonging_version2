@@ -1,0 +1,38 @@
+@import "../../../../assets/theme/_var.scss";
+
+.verify_admin_design {
+    padding: 2rem 0;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .verify_admin_design_card {
+        padding: 4rem;
+        max-width: 40rem;
+        width: 100%;
+        margin: auto;
+        background-color: $shimmer;
+        border-radius: 1rem;
+        text-align: center;
+
+        h2 {
+            color: $white;
+
+            span {
+                display: block;
+                font-size: 1.4rem;
+                color: rgba($white, 0.6);
+                margin-top: 1rem;
+            }
+        }
+
+        .spinner-border {
+            border-color: $white;
+            border-right-color: transparent;
+            width: 4rem;
+            height: 4rem;
+            margin-top: 2rem;
+        }
+    }
+}

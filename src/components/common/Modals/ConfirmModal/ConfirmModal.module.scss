@@ -1,0 +1,41 @@
+@import "../../../../assets/theme/_var.scss";
+
+.confirmation {
+    text-align: center;
+
+    .warning {
+        svg {
+            width: 6rem;
+
+            path {
+                fill: $danger;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 2.4rem;
+        color: $white;
+        margin: 2rem 0 1rem;
+    }
+
+    p {
+        color: $lighttext;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    .action {
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+
+        button {
+            padding: 0;
+
+            &:not(:last-child) {
+                margin-right: 0.8rem;
+            }
+        }
+    }
+}

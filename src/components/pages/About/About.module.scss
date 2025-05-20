@@ -1,0 +1,53 @@
+@import "../../../assets/theme/_var.scss";
+
+.youtube_video {
+    iframe {
+        height: 56rem;
+
+        @media (max-width: 991px) {
+            height: 45rem;
+        }
+
+        @media (max-width: 465px) {
+            height: 36rem;
+        }
+    }
+}
+
+.welcome {
+    text-align: center;
+    padding: 8rem 0;
+
+    @media (max-width: 991px) {
+        padding: 4rem 0;
+    }
+
+    .welcome_in {
+        >p {
+            margin: 2rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba($white, 0.1);
+            font-size: 1.6rem;
+            color: $lighttext;
+            display: flex;
+            align-items: flex-start;
+            // &::before {
+            //     content: "❛";
+            // }
+
+            // &::after {
+            //     content: "❜";
+            // }
+        }
+
+        >a {
+            font-size: 1.4rem;
+            transition: 200ms ease-in-out;
+            color: $primary;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

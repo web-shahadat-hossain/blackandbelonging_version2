@@ -1,0 +1,16 @@
+@import "../../../assets/theme/_var.scss";
+
+.layout {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+
+    :global {
+        button:not(.custom_btn) {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+        }
+    }
+
+}

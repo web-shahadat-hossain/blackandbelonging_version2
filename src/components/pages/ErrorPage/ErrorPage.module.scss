@@ -1,0 +1,86 @@
+@import "../../../assets/theme/_var.scss";
+
+.error_page {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+
+    h3 {
+        color: $lighttext;
+        border-bottom: 2px solid $primary;
+        padding-bottom: 0.4rem;
+        font-size: 1.6rem;
+        display: inline-flex;
+    }
+
+    h1 {
+        font-size: 7.4rem;
+        font-weight: 700;
+        color: $white;
+        margin: 1rem 0;
+
+        @media (max-width: 1479px) {
+            font-size: 6rem;
+        }
+
+        @media (max-width: 1399px) {
+            font-size: 5rem;
+        }
+
+        @media (max-width: 1199px) {
+            font-size: 4rem;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 3rem;
+            margin: 1.6rem 0;
+        }
+    }
+
+    p {
+        color: $text;
+        font-size: 2rem;
+
+        @media (max-width: 1479px) {
+            font-size: 1.8rem;
+        }
+
+        @media (max-width: 1199px) {
+            font-size: 1.6rem;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 1.4rem;
+        }
+    }
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.6rem;
+        color: $primary;
+        margin-top: 3rem;
+
+        @media (max-width: 767px) {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+        }
+
+        svg {
+            width: 2.4rem;
+            height: auto;
+            transition: 200ms ease-in-out;
+
+            path {
+                fill: $primary;
+            }
+        }
+
+        &:hover {
+            svg {
+                transform: translateX(0.6rem);
+            }
+        }
+    }
+}

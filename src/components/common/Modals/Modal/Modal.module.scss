@@ -1,0 +1,43 @@
+@import "../../../../assets/theme/_var.scss";
+
+.modal {
+    :global {
+        .modal-dialog {
+            .modal-content {
+                // background-color: transparent;
+                // backdrop-filter: blur(0.5rem);
+                // border: 1px solid rgba($white, 0.1);
+                background-color: rgba($black, 0.6);
+                backdrop-filter: blur(0.5rem);
+                border: 1px solid rgba($white, 0.1);
+                border-radius: 1rem;
+
+                .modal-header {
+                    border-bottom: none;
+                    padding: 2rem 2.4rem;
+
+                    .modal-title {
+                        font-size: 2rem;
+                        color: $white;
+                        line-height: 2.6rem;
+                        
+                    }
+                    .center-title {
+                        margin: auto;
+                        text-align: center;  // Optional: if you want to center the text horizontally as well
+                    }
+                    .btn-close {
+                        filter: invert(1);
+                        opacity: 1;
+                        box-shadow: none;
+                        height: 2.4rem;
+                    }
+                }
+
+                .modal-body {
+                    padding: 0 2.4rem 2rem;
+                }
+            }
+        }
+    }
+}

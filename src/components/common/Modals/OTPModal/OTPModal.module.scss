@@ -1,0 +1,39 @@
+@import "../../../../assets/theme/_var.scss";
+
+.otp_modal {
+    p {
+        font-size: 1.6rem;
+        color: $white;
+
+        a {
+            color: $primary;
+        }
+    }
+
+    .otp {
+        margin: 2rem 0 5rem;
+        >div {
+            justify-content: space-between;
+            gap: 0.5rem;
+
+            input {
+                background-color: black;
+                border: 1px solid rgba($white , 0.1);
+                border-radius: 0.8rem;
+                transition: 300ms ease-in-out;
+                height: 4.4rem;
+                font-size: 1.6rem;
+                color: $white;
+                font-weight: 600;
+                outline: none;
+                width: calc((100%  - 2.5rem) / 6) !important;
+
+                @media (max-width: 767px) {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+
+}
