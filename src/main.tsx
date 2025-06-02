@@ -6,8 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import "react-phone-input-2/lib/style.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+
 import App from "./App.tsx";
 import { store } from "./app/store";
 import Loader from "./components/common/Loader/Loader.tsx";

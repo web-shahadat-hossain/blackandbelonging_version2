@@ -7,7 +7,7 @@ import axios from "axios";
 import { API } from "../../utils/constant";
 import toast from "react-hot-toast";
 import EmailVerifyModal from "./EmailVerifyModal";
-import citeImg from "../../assets/images/06.jpg";
+import citeImg from "../../assets/images/06.webp";
 
 function PlayPurpose() {
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);

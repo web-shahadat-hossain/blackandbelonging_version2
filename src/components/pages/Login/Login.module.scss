@@ -1,119 +1,123 @@
 @import "../../../assets/theme/_var.scss";
 
 .banner {
-    padding: 30.7rem 0 6rem;
-    text-align: center;
-    background-image: linear-gradient(180deg, rgba($black, 0.8), rgba($black, 0.8)), url(../../../assets/images/loginandother-banner.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: -11.731rem;
+  padding: 30.7rem 0 6rem;
+  text-align: center;
+  background-image: linear-gradient(
+      180deg,
+      rgba($black, 0.8),
+      rgba($black, 0.8)
+    ),
+    url(../../../assets/images/loginandother-banner.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -11.731rem;
 
-    h1 {
-        font-size: 4.4rem;
-        font-weight: 700;
-        color: $white;
-    }
+  h1 {
+    font-size: 4.4rem;
+    font-weight: 700;
+    color: $white;
+  }
 
-    p {
-        font-size: 1.6rem;
-        color: $lighttext;
-    }
+  p {
+    font-size: 1.6rem;
+    color: $lighttext;
+  }
 }
 
 .onboard {
-    padding: 8rem 0;
+  padding: 8rem 0;
 
-    :global {
-        .container {
-            max-width: 70rem;
-        }
+  :global {
+    .container {
+      max-width: 70rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: $text;
+    text-align: center;
+  }
+
+  .or_txt {
+    position: relative;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.6rem;
+    z-index: 1;
+    margin: 2rem 0;
+
+    &::before {
+      z-index: -1;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: rgba($white, 0.4);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        color: $text;
-        text-align: center;
+    span {
+      padding-inline: 0.8rem;
+      background-color: $body;
+    }
+  }
+
+  form {
+    > div,
+    .input {
+      margin-bottom: 2rem;
     }
 
-    .or_txt {
-        position: relative;
-        color: $white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 1.6rem;
-        z-index: 1;
-        margin: 2rem 0;
-
-        &::before {
-            z-index: -1;
-            content: "";
-            width: 100%;
-            height: 1px;
-            background-color: rgba($white, 0.4);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        span {
-            padding-inline: 0.8rem;
-            background-color: $body;
-        }
+    .forgot_password {
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      color: $white;
+      margin-left: auto;
+      display: block;
+      text-decoration: underline;
     }
 
-    form {
-
-        >div,
-        .input {
-            margin-bottom: 2rem;
-        }
-
-        .forgot_password {
-            margin-bottom: 2rem;
-            font-size: 1.4rem;
-            color: $white;
-            margin-left: auto;
-            display: block;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 575px) {
-            .input.first_input {
-                margin-bottom: 0;
-            }
-        }
+    @media (max-width: 575px) {
+      .input.first_input {
+        margin-bottom: 0;
+      }
     }
+  }
 
-    .txt {
-        color: $lighttext;
-        font-size: 1.4rem;
-        margin-top: 1rem;
+  .txt {
+    color: $lighttext;
+    font-size: 1.4rem;
+    margin-top: 1rem;
 
-        a {
-            color: $primary;
+    a {
+      color: $primary;
 
-            &:hover {
-                text-decoration: underline;
-            }
-        }
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
 
-    hr {
-        border-top-color: $lighttext;
-        margin: 2rem 0;
-    }
+  hr {
+    border-top-color: $lighttext;
+    margin: 2rem 0;
+  }
 
-    h3 {
-        color: $lighttext;
-        font-size: 1.4rem;
-    }
+  h3 {
+    color: $lighttext;
+    font-size: 1.4rem;
+  }
 
-    .google_btn {
-        margin-top: 1rem;
-    }
+  .google_btn {
+    margin-top: 1rem;
+  }
 }

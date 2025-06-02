@@ -28,7 +28,7 @@ export const SOCIAL_LINKS = {
   LOCATION: "65 TW Alexander Drive, Unit 12899, Durham, North Carolina, 27709",
   MAIL: "contact@blackandbelonging.com",
   LINKEDIN: "https://www.linkedin.com/company/black-and-belonging/about/",
-  BOUTIQUE: "https://heartbelonging.com/",
+  BOUTIQUE: "https://shop.blackandbelonging.com",
   GITHUB: "",
   FACEBOOK: "",
   INITIATVES:

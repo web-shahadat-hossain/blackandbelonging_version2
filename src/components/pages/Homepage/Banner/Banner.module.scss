@@ -1,34 +1,39 @@
 @import "../../../../assets/theme/_var.scss";
 
 .banner {
-    padding: 14.7rem 0 6rem;
-    text-align: center;
-    background-image: linear-gradient(180deg, rgba($black, 0.8), rgba($black, 0.8)), url(../../../../assets/images/homepageBanner.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center top;
-    margin-top: -11.731rem;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 14.7rem 0 6rem;
+  text-align: center;
+  background-image: linear-gradient(
+      180deg,
+      rgba($black, 0.8),
+      rgba($black, 0.8)
+    ),
+    url(../../../../assets/images/homepageBanner.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  margin-top: -11.731rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .banner_in{
-        >h1 {
-            color: $white;
-            font-size: 4.4rem;
-            font-weight: 700;
-    
-            @media (max-width: 1479px) {
-                font-size: 3.4rem;
-            }
-        }
-    
-        >p {
-            max-width: 50rem;
-            margin: 2rem auto 4rem;
-            font-size: 1.8rem;
-            color: $lighttext;
-        }
+  .banner_in {
+    > h1 {
+      color: $white;
+      font-size: 4.4rem;
+      font-weight: 700;
+
+      @media (max-width: 1479px) {
+        font-size: 3.4rem;
+      }
     }
+
+    > p {
+      max-width: 50rem;
+      margin: 2rem auto 4rem;
+      font-size: 1.8rem;
+      color: $lighttext;
+    }
+  }
 }

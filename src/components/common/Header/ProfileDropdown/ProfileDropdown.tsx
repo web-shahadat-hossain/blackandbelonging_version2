@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Link, NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { ProfileIcon } from "../../../../assets/icons/icons";
-import userImg from "../../../../assets/images/author.jpg";
+import userImg from "../../../../assets/images/author.webp";
 import { resetUser, setAuth } from "../../../../features/user/user.slice";
 import { ROUTES, TOAST_MESSAGE } from "../../../../utils/constant";
 import ConfirmModal from "../../Modals/ConfirmModal/ConfirmModal";

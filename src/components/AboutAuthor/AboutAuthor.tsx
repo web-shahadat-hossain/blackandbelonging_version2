@@ -1,7 +1,7 @@
 import gray from "../../assets/images/Gray.png";
-import ali from "../../assets/images/Ali.png";
-import melina from "../../assets/images/Swinton.png";
-import alah from "../../assets/images/Allah 1.png";
+import ali from "../../assets/images/Ali.webp";
+import melina from "../../assets/images/Swinton.webp";
+import alah from "../../assets/images/Allah 1.webp";
 import LinkedIn from "../../assets/images/linkedin.png";
 import { TEAM_LINKED_LINKS } from "../../utils/constant";
 

@@ -1,52 +1,5 @@
 @import "../../../assets/theme/_var.scss";
 
-// .user_playbooks {
-//     .useplaybooks_bnaner {
-//         margin: 0;
-//         padding: 10rem 0;
-//         background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../../assets/images/banner.webp");
-//     }
-
-//     .playbooks_box {
-//         padding: 5rem 0;
-
-//         .card_design {
-//             padding: 2rem;
-//             background-color: $shimmer;
-//             border-radius: 2rem;
-//             height: 100%;
-
-//             h2 {
-//                 color: $white;
-//                 font-size: 1.8rem;
-//                 font-weight: 600;
-//             }
-
-//             .description {
-//                 font-size: 1.4rem;
-//                 color: rgba($white, 0.6);
-//                 display: -webkit-box;
-//                 -webkit-line-clamp: 5;
-//                 -webkit-box-orient: vertical;
-//                 overflow: hidden;
-//                 text-overflow: ellipsis;
-//                 line-clamp: 5;
-//                 margin: 2rem 0;
-//             }
-
-//             .date {
-//                 margin-top: 2rem;
-//                 font-size: 1.2rem;
-//                 background-color: $primary;
-//                 width: fit-content;
-//                 border-radius: 0.8rem;
-//                 color: $white;
-//                 padding: 0.2rem 0.8rem;
-//             }
-//         }
-//     }
-// }
-
 .playbook-container {
   padding: 30px 40px 45px 30px;
   background: #f3f3f3;
@@ -119,8 +72,8 @@
       }
 
       p {
-        font-size:15px;
-        font-weight:400;
+        font-size: 15px;
+        font-weight: 400;
         margin-bottom: 3.6rem;
 
         @media (max-width: 767px) {
@@ -136,7 +89,7 @@
         li {
           display: flex;
           padding: 15px 0;
-          font-size:15px;
+          font-size: 15px;
 
           @media (max-width: 767px) {
             padding: 10px 0;
@@ -169,21 +122,17 @@
 
         &:hover {
           background-color: #fa1e21;
-
         }
-
       }
 
-
       @media (max-width: 1200px) {
-        .launch-button{
+        .launch-button {
           margin-left: auto;
           margin-right: auto;
           display: flex;
           justify-self: center !important;
         }
       }
-
     }
 
     .image-content {
@@ -268,8 +217,8 @@
       }
 
       p {
-        font-size:15px;
-        font-weight:400;
+        font-size: 15px;
+        font-weight: 400;
         color: #1a1a25;
       }
     }
@@ -323,8 +272,8 @@
 
     p {
       // font-size: 1.6rem;
-      font-size:15px;
-        font-weight:400;
+      font-size: 15px;
+      font-weight: 400;
       color: #fff;
       font-weight: 400;
     }
@@ -340,7 +289,7 @@
       padding-bottom: 40px;
       text-align: center;
       @media (max-width: 767px) {
-        text-align: left !important; 
+        text-align: left !important;
       }
     }
 

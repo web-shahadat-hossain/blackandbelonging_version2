@@ -1,5 +1,5 @@
 import "../pages/admin/Playbooks/Playbooks.scss";
-import citeImg from "../../assets/icons/citeplaybook.png";
+import citeImg from "../../assets/icons/citeplaybook.webp";
 function SitePlayBook() {
   return (
     <div className="sitePlayBook">

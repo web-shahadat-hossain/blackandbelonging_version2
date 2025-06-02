@@ -1,8 +1,6 @@
 import { Form, Formik } from "formik";
-import Lottie from "lottie-react";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { Col, Row } from "react-bootstrap";
-import success from "../../../../assets/animations/success.json";
 import {
   AwardsIcon,
   SchoolIcon,
@@ -18,6 +16,26 @@ import { API, REGEX, SOCIAL_LINKS } from "../../../../utils/constant";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import success from "../../../../assets/animations/success.json";
+
+// ✅ Lottie Component সরাসরি এখানে define & lazy-load wrapper
+const LottieAnimation = ({
+  animationData,
+  className,
+}: {
+  animationData: any;
+  className?: string;
+}) => {
+  const Lottie = require("lottie-react").default;
+  return (
+    <Lottie className={className} animationData={animationData} loop={false} />
+  );
+};
+
+// ✅ Lazy load wrapper
+const LazyLottieAnimation = lazy(() =>
+  Promise.resolve({ default: LottieAnimation })
+);
 
 interface propTypes {
   show?: boolean;
@@ -27,21 +45,9 @@ interface propTypes {
 const RsvpModal = (props: propTypes) => {
   const [loading, setLoading] = useState(false);
   const steps = [
-    {
-      label: 1,
-      key: 1,
-      icon: UserIcon,
-    },
-    {
-      label: 2,
-      key: 2,
-      icon: SchoolIcon,
-    },
-    {
-      label: 3,
-      icon: AwardsIcon,
-      key: 3,
-    },
+    { label: 1, key: 1, icon: UserIcon },
+    { label: 2, key: 2, icon: SchoolIcon },
+    { label: 3, icon: AwardsIcon, key: 3 },
   ];
   const validationSchema = Yup.object({
     fName: Yup.string().required("Required").label("First Name").min(3),
@@ -54,9 +60,6 @@ const RsvpModal = (props: propTypes) => {
       .required("Required")
       .label("Email")
       .matches(REGEX.EMAIL, "Invalid Email"),
-    // organization: Yup.string().required("Required"),
-    // comments: Yup.string().required("Required"),
-    // guestsNumber: Yup.number().required("Required"),
   });
   const initialValues = {
     fName: "",
@@ -92,152 +95,147 @@ const RsvpModal = (props: propTypes) => {
       setStep(steps[2]);
     }
   };
+
   return (
-    <>
-      <Modal
-        show={props.show}
-        handleClose={props.handleClose}
-        title="RSVP"
-        className={styles.rsvp}
-      >
-        <div className={styles.steps}>
-          <ul>
-            {steps.map((item, index) => {
-              return (
-                <li
-                  key={item.key}
-                  className={
-                    index + 1 < step.key
-                      ? styles.done
-                      : JSON.stringify(item) === JSON.stringify(step)
-                      ? styles.active
-                      : ""
-                  }
-                >
-                  <button
-                    // onClick={() => setStep(item)}
-                    className={
-                      index + 1 < step.key
-                        ? styles.done
-                        : JSON.stringify(item) === JSON.stringify(step)
-                        ? styles.active
-                        : ""
-                    }
+    <Modal
+      show={props.show}
+      handleClose={props.handleClose}
+      title="RSVP"
+      className={styles.rsvp}
+    >
+      <div className={styles.steps}>
+        <ul>
+          {steps.map((item, index) => (
+            <li
+              key={item.key}
+              className={
+                index + 1 < step.key
+                  ? styles.done
+                  : JSON.stringify(item) === JSON.stringify(step)
+                  ? styles.active
+                  : ""
+              }
+            >
+              <button
+                className={
+                  index + 1 < step.key
+                    ? styles.done
+                    : JSON.stringify(item) === JSON.stringify(step)
+                    ? styles.active
+                    : ""
+                }
+              >
+                <item.icon />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className={styles.steps_content}>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form>
+            {step.key === 1 && (
+              <Row>
+                <Col md={6}>
+                  <Input
+                    required
+                    name="fName"
+                    label="First Name"
+                    placeholder="Enter Your First Name"
+                  />
+                </Col>
+                <Col md={6}>
+                  <Input
+                    required
+                    name="lName"
+                    label="Last Name"
+                    placeholder="Enter Your Last Name"
+                  />
+                </Col>
+                <Col md={6}>
+                  <Input
+                    required
+                    name="phone"
+                    type="number"
+                    label="Phone"
+                    placeholder="Enter Your Phone"
+                  />
+                </Col>
+                <Col md={6}>
+                  <Input
+                    required
+                    name="email"
+                    label="Email"
+                    placeholder="Enter Your Email Address"
+                    type="email"
+                  />
+                </Col>
+                <Col md={12}>
+                  <Button fluid type="submit" loading={loading}>
+                    Next
+                  </Button>
+                </Col>
+              </Row>
+            )}
+
+            {step.key === 2 && (
+              <Row>
+                <Col md={12}>
+                  <Textarea
+                    required
+                    name="organization"
+                    label="School/Organization"
+                    placeholder="Enter Your School/Organization"
+                  />
+                </Col>
+                <Col md={12}>
+                  <Textarea
+                    required
+                    name="comments"
+                    label="Notes/Comments"
+                    placeholder="Enter Notes/Comments"
+                  />
+                </Col>
+                <Col md={12}>
+                  <Button fluid type="submit" loading={loading}>
+                    Submit
+                  </Button>
+                </Col>
+              </Row>
+            )}
+
+            {step.key === 3 && (
+              <div className={styles.success}>
+                <Suspense fallback={<div>Loading animation...</div>}>
+                  <LazyLottieAnimation
+                    className={styles.animation}
+                    animationData={success}
+                  />
+                </Suspense>
+                <h3>RSPV Submitted Successfully</h3>
+                <p>
+                  Thanks for confirming your attendance! Your presence will make
+                  the event even more special. If you have any more questions or
+                  need assistance, feel free to ask.{" "}
+                  <Link
+                    to={`mailto:${SOCIAL_LINKS.SUPPORT_EMAIL}`}
+                    rel="noreferrer"
+                    target="_blank"
                   >
-                    {/* {item.label} */}
-                    <item.icon />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className={styles.steps_content}>
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            <Form>
-              {step.key === 1 ? (
-                <>
-                  <Row>
-                    <Col md={6}>
-                      <Input
-                        required
-                        name="fName"
-                        label="First Name"
-                        placeholder="Enter Your First Name"
-                      />
-                    </Col>
-                    <Col md={6}>
-                      <Input
-                        required
-                        name="lName"
-                        label="Last Name"
-                        placeholder="Enter Your Last Name"
-                      />
-                    </Col>
-                    <Col md={6}>
-                      <Input
-                        required
-                        name="phone"
-                        type="number"
-                        label="Phone"
-                        placeholder="Enter Your Phone Name"
-                      />
-                    </Col>
-                    <Col md={6}>
-                      <Input
-                        required
-                        name="email"
-                        label="Email"
-                        placeholder="Enter Your Email Address"
-                        type="email"
-                      />
-                    </Col>
-                    <Col md={12}>
-                      <Button fluid type="submit" loading={loading}>
-                        Next
-                      </Button>
-                    </Col>
-                  </Row>
-                </>
-              ) : step.key === 2 ? (
-                <>
-                  <Row>
-                    <Col md={12}>
-                      <Textarea
-                        required
-                        name="school"
-                        label="School/Organization"
-                        placeholder="Enter Your School/Organization"
-                      />
-                    </Col>
-                    <Col md={12}>
-                      <Textarea
-                        required
-                        name="notes"
-                        label="Notes/Comments"
-                        placeholder="Enter Notes/Comments"
-                      />
-                    </Col>
-                    <Col md={12}>
-                      <Button fluid type="submit" loading={loading}>
-                        Submit
-                      </Button>
-                    </Col>
-                  </Row>
-                </>
-              ) : step.key === 3 ? (
-                <>
-                  <div className={styles.success}>
-                    <Lottie
-                      className={styles.animation}
-                      animationData={success}
-                      loop={false}
-                    />
-                    <h3>RSPV Submitted Successfully</h3>
-                    <p>
-                      Thanks for confirming your attendance! Your presence will
-                      make the event even more special.If you have any more
-                      questions or need assistance, feel free to ask.{" "}
-                      <Link
-                        to={`mailto:${SOCIAL_LINKS.SUPPORT_EMAIL}`}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        {SOCIAL_LINKS.SUPPORT_EMAIL}
-                      </Link>
-                    </p>
-                  </div>
-                </>
-              ) : null}
-            </Form>
-          </Formik>
-        </div>
-      </Modal>
-    </>
+                    {SOCIAL_LINKS.SUPPORT_EMAIL}
+                  </Link>
+                </p>
+              </div>
+            )}
+          </Form>
+        </Formik>
+      </div>
+    </Modal>
   );
 };
 

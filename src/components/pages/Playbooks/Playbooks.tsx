@@ -1,6 +1,6 @@
 import "./Playbooks.scss";
 import PlayPurpose from "../../Purpose/PlayPurpose";
-import playbanner from "../../../../public/playbooksCoverImg.png";
+import playbanner from "../../../../public/playbooksCoverImg.webp";
 import SitePlayBook from "../../SitePlayBook/SitePlayBook";
 import AboutAuthor from "../../AboutAuthor/AboutAuthor";
 import { useState, useEffect } from "react";
