@@ -25,7 +25,12 @@ const PollCard = (props: PropTypes) => {
             {props.status}
           </span>
         </div>
-        <Link className={styles.title} to={props.to || ""} title={props.title}>
+        <Link
+          className={styles.title}
+          to={props.to || ""}
+          title={props.title}
+          style={{ textAlign: "center", width: "100%" }}
+        >
           {props.title}
         </Link>
       </div>
