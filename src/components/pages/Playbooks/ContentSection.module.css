@@ -1,0 +1,110 @@
+/* src/components/ContentArea/ContentArea.module.css */
+
+.contentArea {
+  flex: 1; /* Allows ContentArea to take up remaining horizontal space */
+  height: 100%; /* Important: ContentArea takes full height of its parent (.playbookSection) */
+  overflow-y: auto; /* This is where the scrollbar will appear if content overflows */
+  padding: 30px; /* Padding inside the content area */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  background-color: #fff; /* Explicitly white background */
+  border-radius: 8px; /* Soft rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+/* Styles for elements directly within ContentArea to ensure consistency */
+.contentArea :global(h1),
+.contentArea :global(h2),
+.contentArea :global(h3) {
+  color: #1a1a1a;
+}
+
+.contentArea .sectionTitle {
+  font-size: 2.2em; /* Slightly larger title as per screenshot */
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #1a1a1a; /* Ensure title color is consistent */
+}
+
+.contentArea .pageNumber {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.contentArea p {
+  margin-bottom: 20px;
+  font-size: 1.05em;
+  color: #444; /* Darker text for readability */
+  line-height: 1.7; /* Increased line-height for better readability */
+}
+
+.contentArea ul,
+.contentArea ol {
+  margin-bottom: 20px;
+  padding-left: 25px;
+  color: #444; /* Ensure list text also dark */
+}
+
+.contentArea li {
+  margin-bottom: 8px;
+}
+
+.missionBox {
+  background-color: #fff9f0;
+  border-left: 5px solid #ff014f;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 4px;
+}
+
+.missionBox h3 {
+  color: #ff014f;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.missionBox p {
+  margin-bottom: 0;
+}
+
+/* Custom Scrollbars for Webkit browsers (Chrome, Safari, Edge) */
+.contentArea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contentArea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.contentArea::-webkit-scrollbar-thumb {
+  background: #ff014f; /* Orange scrollbar thumb */
+  border-radius: 4px;
+}
+
+.contentArea::-webkit-scrollbar-thumb:hover {
+  background: #cc6600;
+}
+
+/* Custom Scrollbars for Firefox */
+.contentArea {
+  scrollbar-width: thin; /* "auto" or "none" */
+  scrollbar-color: #ff014f #f1f1f1; /* thumb color track color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .contentArea {
+    height: auto; /* Allow height to be auto on smaller screens */
+    overflow-y: visible; /* Hide scrollbar when stacked vertically */
+    padding: 20px; /* Adjust padding for smaller screens */
+    box-shadow: none; /* Remove shadow when stacked */
+  }
+}
+
+@media (max-width: 768px) {
+  .contentArea .sectionTitle {
+    font-size: 1.8em;
+  }
+}

@@ -6,6 +6,12 @@ import AboutAuthor from "../../AboutAuthor/AboutAuthor";
 import { useState, useEffect } from "react";
 import Loader from "../../common/Loader/Loader";
 import { Helmet } from "react-helmet";
+import styles from "./PlaybookSection.module.css";
+import Header from "./Header";
+import TableOfContents from "./TableOfContents";
+import Introduction from "./Introduction";
+import PlaybookCard from "./PlaybookCard";
+import PlayBookBooks from "./PlayBookBooks";
 
 const Playbooks = () => {
   const [loading, setLoading] = useState(true); // Set initial loading to true
@@ -33,12 +39,16 @@ const Playbooks = () => {
       <Helmet>
         <title>About | Black and Belonging</title>
       </Helmet>
-      <div className="playbook-container">
+      <div
+        className="playbook-container"
+        style={{ backgroundColor: "#1A1A25" }}
+      >
         <div className="playbook-container_banner">
           <img src={playbanner} alt="Playbooks Banner" />
         </div>
-        <PlayPurpose />
-        <SitePlayBook />
+        {/* <PlayPurpose />
+        <SitePlayBook /> */}
+        <PlayBookBooks />
         <AboutAuthor />
       </div>
     </>
