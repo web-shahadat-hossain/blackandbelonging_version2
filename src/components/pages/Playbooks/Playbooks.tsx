@@ -1,17 +1,12 @@
-import "./Playbooks.scss";
-import PlayPurpose from "../../Purpose/PlayPurpose";
-import playbanner from "../../../../public/playbooksCoverImg.webp";
-import SitePlayBook from "../../SitePlayBook/SitePlayBook";
-import AboutAuthor from "../../AboutAuthor/AboutAuthor";
 import { useState, useEffect } from "react";
-import Loader from "../../common/Loader/Loader";
 import { Helmet } from "react-helmet";
-import styles from "./PlaybookSection.module.css";
-import Header from "./Header";
-import TableOfContents from "./TableOfContents";
-import Introduction from "./Introduction";
-import PlaybookCard from "./PlaybookCard";
-import PlayBookBooks from "./PlayBookBooks";
+import Loader from "../../common/Loader/Loader";
+import Hero from "./Hero";
+import ContentSection from "./ContentSection";
+import PurposeSection from "./PurposeSection";
+import AcknowledgmentsSection from "./AcknowledgmentsSection";
+import ExploreInitiativesSection from "./ExploreInitiativesSection";
+import AuthorsSection from "./AuthorsSection";
 
 const Playbooks = () => {
   const [loading, setLoading] = useState(true); // Set initial loading to true
@@ -39,17 +34,13 @@ const Playbooks = () => {
       <Helmet>
         <title>About | Black and Belonging</title>
       </Helmet>
-      <div
-        className="playbook-container"
-        style={{ backgroundColor: "#1A1A25" }}
-      >
-        <div className="playbook-container_banner">
-          <img src={playbanner} alt="Playbooks Banner" />
-        </div>
-        {/* <PlayPurpose />
-        <SitePlayBook /> */}
-        <PlayBookBooks />
-        <AboutAuthor />
+      <div style={{ backgroundColor: "#1a1a2e", color: " #ffffff" }}>
+        <Hero />
+        <ContentSection />
+        <PurposeSection />
+        <AcknowledgmentsSection />
+        <ExploreInitiativesSection />
+        <AuthorsSection />
       </div>
     </>
   );

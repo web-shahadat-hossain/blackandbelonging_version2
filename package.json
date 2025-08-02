@@ -32,6 +32,7 @@
     "grapesjs-rulers": "^1.0.8",
     "grapesjs-tabs": "^1.0.6",
     "html-react-parser": "^5.1.15",
+    "html-to-text": "^9.0.5",
     "lottie-react": "^2.4.0",
     "moment": "^2.30.1",
     "react": "^18.2.0",

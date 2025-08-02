@@ -1,0 +1,157 @@
+/* AuthorsSection.module.css */
+
+.authorsSection {
+  background: linear-gradient(
+    to right,
+    #1a1a2e,
+    #1a1a2e
+  ); /* Dark blue-red gradient background */
+  color: #ffffff; /* White text for contrast */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.heading {
+  font-family: "Georgia", serif; /* A more elegant font as seen in the image */
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  text-align: left; /* Align heading to the left */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ff0066; /* Pink color for the heading */
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); /* Responsive grid */
+  gap: 2rem; /* Space between cards */
+  max-width: 1200px; /* Limit overall width of the grid */
+  margin: 0 auto;
+  align-items: start; /* Align cards to the start of their grid cell */
+}
+
+.card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.08
+  ); /* Semi-transparent white for frosted glass effect */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 350px; /* Ensure consistent height for cards */
+  justify-content: space-between; /* Push QR code to bottom */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.authorName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ff0066; /* Pink for author names */
+}
+
+.authorDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0e0e0; /* Lighter white for description */
+  flex-grow: 1; /* Allows description to take available space */
+  margin-bottom: 1.5rem; /* Space before QR code */
+}
+
+.linkedinQrPlaceholder {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Slightly brighter for QR placeholder */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem; /* Space between description and QR */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    min-height: 320px;
+    padding: 1.5rem;
+  }
+  .authorName {
+    font-size: 1.3rem;
+  }
+  .authorDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .authorsSection {
+    padding: 3rem 1rem;
+  }
+  .heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .cardsGrid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+  .card {
+    min-height: auto; /* Allow height to adjust */
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+  .card {
+    padding: 1.2rem;
+  }
+  .authorName {
+    font-size: 1.1rem;
+  }
+  .authorDescription {
+    font-size: 0.85rem;
+  }
+  .linkedinQrPlaceholder {
+    width: 100px;
+    height: 100px;
+    font-size: 0.7rem;
+  }
+}

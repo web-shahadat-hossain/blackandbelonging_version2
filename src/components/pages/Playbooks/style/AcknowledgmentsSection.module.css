@@ -1,0 +1,161 @@
+/* AcknowledgmentsSection.module.css */
+
+.acknowledgmentsSection {
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff; /* White text for contrast */
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 3rem; /* Space between the image and text sections */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imageBlock {
+  flex: 1; /* Allows the image block to take available space */
+  min-width: 400px; /* Minimum width for the image block before wrapping */
+  max-width: 600px; /* Adjust as needed */
+  position: relative;
+  /* Adjust max-width and min-width to control image size */
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Slightly rounded corners for the image container */
+  /* If you want the image itself to have the border, apply it here */
+}
+
+/* Overlay with B&B Blitz logo and text - this might be part of the image itself,
+   but we'll simulate an overlay for flexibility. */
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: 8px; /* Match image block border-radius */
+}
+
+.overlayLogo {
+  font-family: "Arial Black", sans-serif; /* Or your specific logo font */
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 0.9;
+  text-align: center;
+  color: white;
+}
+
+.overlaySubtext {
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+  color: #cccccc;
+}
+
+.textBlock {
+  flex: 1; /* Allows the text block to take available space */
+  min-width: 450px; /* Minimum width for the text block */
+  max-width: 600px; /* Adjust as needed */
+  text-align: left;
+}
+
+.subHeading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #ff0066; /* Pink color for subheadings */
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem; /* Space between paragraphs */
+  color: #e0e0e0; /* Slightly off-white for body text */
+}
+
+.citationHeading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: #ff0066; /* Pink color for subheadings */
+}
+
+.citationText {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e7e7e7; /* Lighter white for citation text */
+  margin-bottom: 2rem;
+}
+
+.button {
+  background-color: #ff0066 !important; /* Your bright pink button color */
+  color: white;
+  padding: 0.8rem 1.5rem !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e6005c; /* Darker pink on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .acknowledgmentsSection {
+    flex-direction: column; /* Stack image and text vertically */
+    padding: 3rem 1.5rem;
+  }
+  .imageBlock,
+  .textBlock {
+    min-width: unset; /* Remove min-width to allow more flexibility */
+    width: 90%; /* Take more width on smaller screens */
+    max-width: 700px; /* Max width for consistency */
+  }
+  .imageBlock {
+    margin-bottom: 2rem; /* Space between stacked elements */
+  }
+}
+
+@media (max-width: 600px) {
+  .acknowledgmentsSection {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  .subHeading {
+    font-size: 1.3rem;
+  }
+  .paragraph {
+    font-size: 0.9rem;
+  }
+  .citationHeading {
+    font-size: 1.1rem;
+  }
+  .citationText {
+    font-size: 0.85rem;
+  }
+  .overlayLogo {
+    font-size: 2.2rem;
+  }
+  .overlaySubtext {
+    font-size: 0.8rem;
+  }
+}

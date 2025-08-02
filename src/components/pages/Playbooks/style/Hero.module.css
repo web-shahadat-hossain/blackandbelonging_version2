@@ -1,0 +1,119 @@
+/* HeroSection.module.css */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Adjust height as needed, e.g., 600px, 80vh */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  color: white; /* Default text color */
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(50%); /* Grayscale and darker overlay */
+  z-index: 1;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  padding: 2rem; /* Adjust padding as needed */
+  max-width: 600px; /* Limit content width */
+  margin-left: 10%; /* Adjust margin to position content */
+}
+.contentWrapper div {
+  border-left: 4px solid #e6005c;
+  padding-left: 20px;
+}
+
+.logo {
+  font-size: 2rem;
+  padding: 5px;
+
+  border-radius: 10px;
+  width: 120px;
+  margin-bottom: 0.5rem;
+  color: white; /* Ensure logo is visible */
+  background-color: rgba(0, 0, 0, 0.479);
+  text-align: center;
+}
+
+.title {
+  font-size: 4rem; /* Large font size for title */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #d4d4d4; /* Slightly lighter color for description */
+}
+
+.button {
+  background-color: #ff0066 !important;
+  color: white;
+  padding: 0.8rem 1.5rem !important;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none; /* For anchor tag if used */
+  display: inline-block; /* For proper padding and sizing */
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e6005c; /* Darker pink on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .contentWrapper {
+    margin-left: 5%;
+    padding: 1.5rem;
+  }
+  .logo {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .contentWrapper div {
+    border-left: none;
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .contentWrapper {
+    margin-left: 0;
+    text-align: center;
+    padding: 1rem;
+    max-width: 90%;
+  }
+  .heroSection {
+    justify-content: center; /* Center content for smaller screens */
+  }
+}
