@@ -37,12 +37,15 @@ const Login = () => {
       });
       if (Number(response.status) === 200) {
         let token = response.data.data.token;
+        localStorage.setItem("token", token);
         let profileResponse = await axios.get(API.GET_PROFILE, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         });
         let data = profileResponse.data.data;
+
+        localStorage.setItem("userType", data.userType);
         navigate(from, { replace: true });
         dispatch(
           setUser({
@@ -51,6 +54,7 @@ const Login = () => {
             displayName: data.firstName,
             userImg: "",
             email: data.email,
+            userType: data.userType,
             // registeredDate: data.user_registered,
             userId: data.id,
             // role: response.data.roles[0],

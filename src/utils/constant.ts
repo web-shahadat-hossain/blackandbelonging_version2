@@ -86,6 +86,7 @@ export const API = {
   MIXTAPE: `${BASE_URL}/mixtapes/mixtape/`,
   MEDIA: "https://api.blackandbelonging.com/wp-json/wp/v2/media",
   REGISTER: `${USER_BASE_URL}/auth/signup`,
+  AUTHORREQUEST: `${USER_BASE_URL}/author-requests`,
   LOGIN: `${USER_BASE_URL}/auth/login`,
   EVENTS: `${BASE_URL}/events/:rows/:page`,
   EVENT: `${BASE_URL}/events/`,

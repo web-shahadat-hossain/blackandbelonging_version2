@@ -1,0 +1,98 @@
+/* ===== User Type (Dark Themed) ===== */
+:root {
+  /* fallback brand tokens (project tokens থাকলে সেগুলোই প্রাধান্য পাবে) */
+  --brand: var(--brand-primary, #ff1f5a);
+  --bg: #0f1117; /* page bg (fallback) */
+  --bg-elev: #171923; /* card bg */
+  --bg-elev-2: #1d2030; /* active/hover bg */
+  --stroke: rgba(255, 255, 255, 0.08);
+  --stroke-hover: rgba(255, 255, 255, 0.12);
+  --stroke-active: rgba(255, 31, 90, 0.5);
+  --text: #e6e7eb;
+  --text-muted: #9aa1b2;
+  --text-inverse: #0b0b0c;
+}
+
+.formLabel {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.userTypeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 10px 0;
+  max-width: 800px;
+}
+
+.userTypeCard {
+  background: var(--bg-elev);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 10px !important;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.08s ease;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.userTypeCard:hover {
+  background: var(--bg-elev-2);
+  border-color: var(--stroke-hover);
+}
+
+.active {
+  background: linear-gradient(0deg, var(--bg-elev-2), var(--bg-elev));
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--stroke-active), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.cardBlurb {
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+}
+
+/* radio tweak for dark */
+.radio {
+  border-color: var(--stroke) !important;
+  background-color: transparent !important;
+}
+.radio:checked {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+}
+.radioLabel {
+  margin-left: 6px;
+  color: var(--text-muted);
+}
+
+/* optional: align with existing input style */
+.input,
+.first_input {
+  /* তোমার আগের স্টাইল থাকবে; চাইলে এখানে dark fine-tune যোগ করতে পারো */
+}

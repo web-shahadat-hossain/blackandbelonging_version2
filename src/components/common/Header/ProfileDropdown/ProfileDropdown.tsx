@@ -25,6 +25,7 @@ const ProfileDropdown = () => {
     dispatch(setAuth(false));
     dispatch(resetUser());
     // auth.signOut();
+    localStorage.clear();
     toast.success(TOAST_MESSAGE.LOGGED_OUT);
   };
   return (

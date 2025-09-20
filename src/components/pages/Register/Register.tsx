@@ -18,13 +18,16 @@ import InfoModal from "../../common/Modals/InfoModal/InfoModal";
 
 const Register = () => {
   const [show, setShow] = useState(false);
+
   const initialValues = {
     email: "",
     firstName: "",
     lastName: "",
     password: "",
     confirmPassword: "",
+    userType: "USER" as "USER" | "AUTHOR",
   };
+
   const validationSchema = Yup.object({
     email: Yup.string()
       .email("Invalid email")
@@ -39,7 +42,11 @@ const Register = () => {
       [Yup.ref("password")],
       "Passwords must match"
     ),
+    userType: Yup.mixed<"USER" | "AUTHOR">()
+      .oneOf(["USER", "AUTHOR"], "Invalid user type")
+      .required("This field is required"),
   });
+
   const handleSubmit = async (
     values: typeof initialValues,
     formikProps: any
@@ -54,17 +61,17 @@ const Register = () => {
       if (Number(response.data.status) === 200) {
         toast.success(TOAST_MESSAGE.REGISTRATION);
         setShow(true);
-        // navigate(ROUTES.LOGIN)
       }
       formikProps.setSubmitting(false);
     } catch (error: any) {
-      if (error.response.data) {
+      if (error.response?.data) {
         return toast.error(htmlToPlainText(error.response.data.message));
       }
       toast.error(error.message);
       formikProps.setSubmitting(false);
     }
   };
+
   return (
     <>
       <Helmet>
@@ -73,12 +80,10 @@ const Register = () => {
       <section className={styles.banner}>
         <Container>
           <h1>Register Here</h1>
-          {/* <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, aperiam?</p> */}
         </Container>
       </section>
       <section className={styles.onboard}>
         <Container>
-          {/* <h2>Don't have an account? Register now.</h2> */}
           <GoogleLoginBtn
             text="Sign Up with Google"
             className={styles.google_btn}
@@ -115,6 +120,7 @@ const Register = () => {
                     />
                   </Col>
                 </Row>
+
                 <Input
                   required
                   icon={<EmailIcon />}
@@ -123,12 +129,59 @@ const Register = () => {
                   placeholder="Enter e-mail"
                   label="E-mail"
                 />
+
                 <Password name="password" required label="Enter Password" />
                 <Password
                   name="confirmPassword"
                   required
                   label="Confirm Password"
                 />
+
+                {/* User Type with Inline Styles */}
+                <div className="mb-3">
+                  <label
+                    className="form-label"
+                    style={{
+                      color: "#9aa1b2",
+                      fontWeight: 600,
+                      marginBottom: "6px",
+                      display: "block",
+                    }}
+                  >
+                    User Type
+                  </label>
+                  <select
+                    name="userType"
+                    value={formik.values.userType}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    style={{
+                      width: "100%",
+                      padding: "10px 12px",
+                      borderRadius: "8px",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      backgroundColor: "#171923",
+                      color: "#e6e7eb",
+                      fontSize: "14px",
+                      transition: "all 0.2s ease",
+                    }}
+                  >
+                    <option value="USER">USER</option>
+                    <option value="AUTHOR">AUTHOR</option>
+                  </select>
+                  {formik.touched.userType && formik.errors.userType && (
+                    <div
+                      style={{
+                        color: "#ff4d4f",
+                        fontSize: "13px",
+                        marginTop: "4px",
+                      }}
+                    >
+                      {formik.errors.userType as string}
+                    </div>
+                  )}
+                </div>
+
                 <Button
                   type="submit"
                   fluid
@@ -137,6 +190,7 @@ const Register = () => {
                 >
                   Register
                 </Button>
+
                 <p className={styles.txt}>
                   Already have an account?&nbsp;
                   <Link to={ROUTES.LOGIN}>Login Here.</Link>
