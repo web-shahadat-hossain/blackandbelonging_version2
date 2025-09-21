@@ -12,7 +12,6 @@ import { htmlToPlainText } from "../../../utils/utils";
 import Button from "../../common/Button/Button";
 import Input from "../../common/Formik/Input/Input";
 import Password from "../../common/Formik/Password/Password";
-import GoogleLoginBtn from "../../common/GoogleLoginBtn/GoogleLoginBtn";
 import styles from "../Login/Login.module.scss";
 import InfoModal from "../../common/Modals/InfoModal/InfoModal";
 
