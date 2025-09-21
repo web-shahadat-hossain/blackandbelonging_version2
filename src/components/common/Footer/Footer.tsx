@@ -100,6 +100,9 @@ const Footer = () => {
             <li>
               <NavLink to={ROUTES.DMCA_NOTICE}>DMCA Notice</NavLink>
             </li>
+            <li>
+              <NavLink to={ROUTES.AUTHOR_REQUESTS}>Author Requests</NavLink>
+            </li>
           </ul>
           <div className={styles.newsletter}>
             <h3>Newsletter</h3>

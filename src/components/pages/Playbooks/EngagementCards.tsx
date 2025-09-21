@@ -1,32 +1,6 @@
 import styles from "./style/EngagementCards.module.css";
 
 const EngagementCards = () => {
-  const cardsData = [
-    {
-      id: 1,
-      title: "Who are the members of your tribe?",
-      description:
-        "List the people you already work with/anticipate partnering with who would likely welcome youth leadership .",
-      link: "#",
-      img: "https://res.cloudinary.com/dpcxwe6gm/image/upload/v1752433361/image_4_x3jm9s.png",
-    },
-    {
-      id: 2,
-      title: "Characteristics of collaborators:",
-      description:
-        ": List some skills, attributes, mentorship/facilitator experience they possess that will best align your program’s goals",
-      link: "#",
-      img: "https://res.cloudinary.com/dpcxwe6gm/image/upload/v1752433361/image_4_x3jm9s.png",
-    },
-    {
-      id: 3,
-      title: "Auditing and contextualization:",
-      description:
-        ": What are the social, organizational, temporal, and geographical contexts that may influence how you work with youth researchers? ",
-      link: "#",
-      img: "https://res.cloudinary.com/dpcxwe6gm/image/upload/v1752433361/image_4_x3jm9s.png",
-    },
-  ];
   // const data = ` <div style=" display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 1rem;">
   //       <div style="  box-shadow: inset 0 1px 5px rgba(189, 189, 189, 0.1); width: 100%;  border-radius: 0.75rem;  padding: 2.5rem;">
 

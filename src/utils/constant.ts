@@ -59,6 +59,7 @@ export const ROUTES = {
   TERMS_OF_USE: "/terms-of-use",
   COOKIE_POLICY: "/cookie-policy",
   COMMUNITY_GUIDELINES: "/community-guidelines",
+  AUTHOR_REQUESTS: "/author-requests",
   DMCA_NOTICE: "/dmca-notice",
   SETTINGS: "/settings",
   EVENTS: "/events",

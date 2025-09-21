@@ -16,7 +16,7 @@ import GoogleLoginBtn from "../../common/GoogleLoginBtn/GoogleLoginBtn";
 import styles from "../Login/Login.module.scss";
 import InfoModal from "../../common/Modals/InfoModal/InfoModal";
 
-const Register = () => {
+const AuthorRequests = () => {
   const [show, setShow] = useState(false);
 
   const initialValues = {
@@ -25,7 +25,7 @@ const Register = () => {
     lastName: "",
     password: "",
     confirmPassword: "",
-    userType: "USER",
+    userType: "AUTHOR",
   };
 
   const validationSchema = Yup.object({
@@ -52,7 +52,7 @@ const Register = () => {
     values: typeof initialValues,
     formikProps: any
   ) => {
-    values.userType = "USER";
+    values.userType = "AUTHOR";
     try {
       let response = await axios.post(API.REGISTER, values, {
         headers: {
@@ -77,22 +77,22 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>Register | Black and Belonging</title>
+        <title>Author Requests | Black and Belonging</title>
       </Helmet>
       <section className={styles.banner}>
         <Container>
-          <h1>Register Here</h1>
+          <h1>Author Requests Here</h1>
         </Container>
       </section>
       <section className={styles.onboard}>
         <Container>
-          <GoogleLoginBtn
+          {/* <GoogleLoginBtn
             text="Sign Up with Google"
             className={styles.google_btn}
           />
           <p className={styles.or_txt}>
             <span>Or</span>
-          </p>
+          </p> */}
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -140,7 +140,7 @@ const Register = () => {
                 />
 
                 {/* User Type with Inline Styles */}
-                {/* <div className="mb-3">
+                <div className="mb-3">
                   <label
                     className="form-label"
                     style={{
@@ -168,7 +168,6 @@ const Register = () => {
                       transition: "all 0.2s ease",
                     }}
                   >
-                    <option value="USER">USER</option>
                     <option value="AUTHOR">AUTHOR</option>
                   </select>
                   {formik.touched.userType && formik.errors.userType && (
@@ -182,7 +181,7 @@ const Register = () => {
                       {formik.errors.userType as string}
                     </div>
                   )}
-                </div> */}
+                </div>
 
                 <Button
                   type="submit"
@@ -207,4 +206,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default AuthorRequests;

@@ -10,6 +10,7 @@ interface userDetails {
   role?: "customer";
   status?: string;
   userImg?: string;
+  userType?: string;
 }
 interface userState {
   userDetails: userDetails;

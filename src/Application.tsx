@@ -38,6 +38,7 @@ import AuthGaurd from "./gaurds/AuthGaurd";
 import NoGaurd from "./gaurds/NoGaurd";
 import { ROUTES } from "./utils/constant";
 import BudgetBreakdown from "./components/pages/summer_bootcamp/budget-breakdown.tsx";
+import AuthorRequests from "./components/pages/AuthorRequests/AuthorRequests.tsx";
 
 const Application = () => {
   const router = createBrowserRouter([
@@ -167,6 +168,14 @@ const Application = () => {
           element: (
             <>
               <TermsOfUse />
+            </>
+          ),
+        },
+        {
+          path: ROUTES.AUTHOR_REQUESTS,
+          element: (
+            <>
+              <AuthorRequests />
             </>
           ),
         },
