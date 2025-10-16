@@ -32,6 +32,8 @@ function PlayPurpose() {
         );
         setShowConfirmationModal(!showConfirmationModal);
         return true;
+        // window.location.href = 'https://storage.googleapis.com/blackandbelonging/videoevent/B-B-Blitz-PDF.pdf';
+        // navigate('https://storage.googleapis.com/blackandbelonging/videoevent/B-B-Blitz-PDF.pdf' , { replace : true  });
       }
     } catch (error: any) {
       console.log("error", error);

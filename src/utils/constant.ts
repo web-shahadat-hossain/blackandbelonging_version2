@@ -62,6 +62,7 @@ export const ROUTES = {
   AUTHOR_REQUESTS: "/author-requests",
   DMCA_NOTICE: "/dmca-notice",
   SETTINGS: "/settings",
+  AUTHOR: "/author",
   EVENTS: "/events",
   VIEW_EVENT: "/events/:id",
   GALLERY: "/gallery",

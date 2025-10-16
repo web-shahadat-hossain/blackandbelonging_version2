@@ -1,12 +1,11 @@
+import "./Playbooks.scss";
+import PlayPurpose from "../../Purpose/PlayPurpose";
+import playbanner from "../../../../public/playbooksCoverImg.png";
+import SitePlayBook from "../../SitePlayBook/SitePlayBook";
+import AboutAuthor from "../../AboutAuthor/AboutAuthor";
 import { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import Loader from "../../common/Loader/Loader";
-import Hero from "./Hero";
-import ContentSection from "./ContentSection";
-import PurposeSection from "./PurposeSection";
-import AcknowledgmentsSection from "./AcknowledgmentsSection";
-import ExploreInitiativesSection from "./ExploreInitiativesSection";
-import AuthorsSection from "./AuthorsSection";
+import { Helmet } from "react-helmet";
 
 const Playbooks = () => {
   const [loading, setLoading] = useState(true); // Set initial loading to true
@@ -34,13 +33,13 @@ const Playbooks = () => {
       <Helmet>
         <title>About | Black and Belonging</title>
       </Helmet>
-      <div style={{ backgroundColor: "#1a1a2e", color: " #ffffff" }}>
-        <Hero />
-        <ContentSection />
-        <PurposeSection />
-        <AcknowledgmentsSection />
-        <ExploreInitiativesSection />
-        <AuthorsSection />
+      <div className="playbook-container">
+        <div className="playbook-container_banner">
+          <img src={playbanner} alt="Playbooks Banner" />
+        </div>
+        <PlayPurpose />
+        <SitePlayBook />
+        <AboutAuthor />
       </div>
     </>
   );

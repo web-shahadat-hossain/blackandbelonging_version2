@@ -40,6 +40,8 @@ import { ROUTES } from "./utils/constant";
 import BudgetBreakdown from "./components/pages/summer_bootcamp/budget-breakdown.tsx";
 import AuthorRequests from "./components/pages/AuthorRequests/AuthorRequests.tsx";
 
+import Author from "./components/pages/Author/Author.tsx";
+
 const Application = () => {
   const router = createBrowserRouter([
     {
@@ -164,6 +166,14 @@ const Application = () => {
           ),
         },
         {
+          path: ROUTES.AUTHOR,
+          element: (
+            <AuthGaurd>
+              <Author />
+            </AuthGaurd>
+          ),
+        },
+        {
           path: ROUTES.TERMS_OF_USE,
           element: (
             <>
@@ -269,6 +279,18 @@ const Application = () => {
       path: ROUTES.USER_PLAYBOOK,
       element: <UserPlaybook />,
     },
+
+    // {
+    //   path: "/dashboard",
+    //   element: <DashboardLayout />,
+    //   children: [
+    //     { index: true, element: <Overview /> },
+    //     { path: "author-request", element: <AuthorRequestForm /> },
+    //     { path: "requests", element: <RequestsTable /> },
+    //     { path: "polls-events", element: <PollsEvents /> },
+    //     { path: "settings", element: <AuthorSettings /> },
+    //   ],
+    // },
   ]);
   return (
     <>
